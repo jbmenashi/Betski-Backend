@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 g1 = Game.create(home_team: "BOS", away_team: "NYK", spread: -8.5, over_under: 220.5, date: "something")
 
 o1 = Odd.create(game_id: g1.id, line: "moneyline", home_under: -150, away_over: 200)
@@ -16,8 +17,8 @@ o3 = Odd.create(game_id: g1.id, line: "spread", home_under: -115, away_over: 110
 t1 = Ticket.create(wager: 0, payout: 0)
 
 b1 = Bet.create(game_id: g1.id, ticket_id: t1.id, multiplier: 0)
-
-if g1.odds.whatever is positive
-  multiplier = g1.odds.whatever + 100 / 100
-if g1.odds.whatever is negative
-  multiplier = g1.odds.whatever + 100 / g1.odds.whatever
+#
+# if g1.odds.whatever is positive
+#   multiplier = g1.odds.whatever + 100 / 100
+# if g1.odds.whatever is negative
+#   multiplier = g1.odds.whatever + 100 / g1.odds.whatever
