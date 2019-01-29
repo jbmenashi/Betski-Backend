@@ -26,6 +26,6 @@ class Api::V1::OddsController < ApplicationController
   end
 
   def find_odd
-    @odd = User.find(params[:id])
+    @odd = Odd.find(params[:id])
   end
 end

@@ -28,7 +28,7 @@ class Api::V1::UsersController < ApplicationController
 
   def bets
     @ticket = Ticket.find(params[:ticket_id])
-    @bets = Event.select {|bet| bet.user == @user && bet.ticket == @ticket}
+    @bets = Bet.select {|bet| bet.user == @user && bet.ticket == @ticket}
     render json: @bets
   end
 

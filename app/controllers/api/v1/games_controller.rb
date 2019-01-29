@@ -35,6 +35,6 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def find_game
-    @game = User.find(params[:id])
+    @game = Game.find(params[:id])
   end
 end
