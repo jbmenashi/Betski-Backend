@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  line: MyString
+  home_under: 1
+  away_over: 1
+
+two:
+  game: two
+  line: MyString
+  home_under: 1
+  away_over: 1

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home_team: MyString
+  away_team: MyString
+  spread: 1.5
+  over_under: 1.5
+  date: 
+
+two:
+  home_team: MyString
+  away_team: MyString
+  spread: 1.5
+  over_under: 1.5
+  date: 
