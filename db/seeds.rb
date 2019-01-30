@@ -22,7 +22,7 @@ def find_correct_odds(array)
 end
 
 
-nhl_request = RestClient.get 'https://jsonodds.com/api/odds/nhl', {'x-api-key':'c92c1650-2016-11e9-9bdc-0a704e36c1ea'}
+nhl_request = RestClient.get 'https://jsonodds.com/api/odds/nhl', {'x-api-key': ENV['API_KEY']}
 nhl_response = JSON.parse(nhl_request)
 nhl_response.each do |game|
   created_game = Game.create(
@@ -57,7 +57,7 @@ nhl_response.each do |game|
   )
 end
 
-nba_request = RestClient.get 'https://jsonodds.com/api/odds/nba', {'x-api-key':'c92c1650-2016-11e9-9bdc-0a704e36c1ea'}
+nba_request = RestClient.get 'https://jsonodds.com/api/odds/nba', {'x-api-key': ENV['API_KEY']}
 nba_response = JSON.parse(nba_request)
 nba_response.each do |game|
   created_game = Game.create(
