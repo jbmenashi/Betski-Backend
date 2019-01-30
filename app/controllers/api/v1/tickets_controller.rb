@@ -1,5 +1,5 @@
 class Api::V1::TicketsController < ApplicationController
-  before_action :find_ticket, only: [:show, :create, :update, :destroy, :bets]
+  before_action :find_ticket, only: [:show, :update, :destroy, :bets]
   def index
     @tickets = Ticket.all
     render json: @tickets

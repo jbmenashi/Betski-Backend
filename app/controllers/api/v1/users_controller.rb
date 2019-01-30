@@ -1,5 +1,11 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :find_user, only: [:show, :create, :update, :tickets, :bets]
+  before_action :find_user, only: [:show, :update, :tickets, :bets]
+
+  def index
+    @users = User.all
+    render json: @users
+  end
+
   def show
     render json: @user
   end

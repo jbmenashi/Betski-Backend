@@ -1,5 +1,5 @@
 class Api::V1::OddsController < ApplicationController
-  before_action :find_odd, only: [:show, :create]
+  before_action :find_odd, only: [:show]
 
   def index
     @odds = Odd.all

@@ -1,5 +1,5 @@
 class Api::V1::BetsController < ApplicationController
-  before_action :find_bet, only: [:show, :create, :update, :destroy]
+  before_action :find_bet, only: [:show, :update, :destroy]
   def index
     @bets = Bet.all
     render json: @bets

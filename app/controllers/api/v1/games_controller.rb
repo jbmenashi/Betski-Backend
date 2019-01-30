@@ -1,5 +1,5 @@
 class Api::V1::GamesController < ApplicationController
-  before_action :find_game, only: [:show, :create, :odds, :bets]
+  before_action :find_game, only: [:show, :odds, :bets]
 
   def index
     @games = Game.all
