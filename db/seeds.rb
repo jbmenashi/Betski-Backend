@@ -39,9 +39,9 @@ nhl_response.each do |game|
   )
   Odd.create(
     game_id: created_game.id,
-    line: "moneyline",
-    home_under: find_correct_odds(game["Odds"])['MoneyLineHome'],
-    away_over: find_correct_odds(game["Odds"])['MoneyLineAway']
+    line: "spread",
+    home_under: find_correct_odds(game["Odds"])['PointSpreadHomeLine'],
+    away_over: find_correct_odds(game["Odds"])['PointSpreadAwayLine']
   )
   Odd.create(
     game_id: created_game.id,
@@ -51,9 +51,9 @@ nhl_response.each do |game|
   )
   Odd.create(
     game_id: created_game.id,
-    line: "spread",
-    home_under: find_correct_odds(game["Odds"])['PointSpreadHomeLine'],
-    away_over: find_correct_odds(game["Odds"])['PointSpreadAwayLine']
+    line: "moneyline",
+    home_under: find_correct_odds(game["Odds"])['MoneyLineHome'],
+    away_over: find_correct_odds(game["Odds"])['MoneyLineAway']
   )
 end
 
@@ -74,9 +74,9 @@ nba_response.each do |game|
   )
   Odd.create(
     game_id: created_game.id,
-    line: "moneyline",
-    home_under: find_correct_odds(game["Odds"])['MoneyLineHome'],
-    away_over: find_correct_odds(game["Odds"])['MoneyLineAway']
+    line: "spread",
+    home_under: find_correct_odds(game["Odds"])['PointSpreadHomeLine'],
+    away_over: find_correct_odds(game["Odds"])['PointSpreadAwayLine']
   )
   Odd.create(
     game_id: created_game.id,
@@ -86,9 +86,9 @@ nba_response.each do |game|
   )
   Odd.create(
     game_id: created_game.id,
-    line: "spread",
-    home_under: find_correct_odds(game["Odds"])['PointSpreadHomeLine'],
-    away_over: find_correct_odds(game["Odds"])['PointSpreadAwayLine']
+    line: "moneyline",
+    home_under: find_correct_odds(game["Odds"])['MoneyLineHome'],
+    away_over: find_correct_odds(game["Odds"])['MoneyLineAway']
   )
 end
 #
