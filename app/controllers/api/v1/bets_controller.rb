@@ -34,7 +34,7 @@ class Api::V1::BetsController < ApplicationController
   private
 
   def bet_params
-    params.permit(:game_id, :ticket_id, :multiplier)
+    params.permit(:game_id, :ticket_id, :multiplier, :team, :variety, :line, :odds)
   end
 
   def find_bet

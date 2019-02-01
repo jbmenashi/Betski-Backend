@@ -39,7 +39,7 @@ class Api::V1::TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.permit(:user_id, :wager, :payout)
+    params.permit(:user_id, :wager, :payout, :submitted, :closed)
   end
 
   def find_ticket
