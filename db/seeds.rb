@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Bet.destroy_all
-Ticket.destroy_all
+Ticket.delete_all
 User.destroy_all
 Odd.destroy_all
 Game.destroy_all
