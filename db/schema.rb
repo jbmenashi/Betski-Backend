@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_161744) do
+ActiveRecord::Schema.define(version: 2019_02_04_163609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_161744) do
     t.datetime "updated_at", null: false
     t.boolean "submitted"
     t.boolean "closed"
+    t.string "result"
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
