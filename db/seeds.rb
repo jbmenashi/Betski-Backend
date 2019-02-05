@@ -91,6 +91,41 @@ nba_response.each do |game|
     away_over: find_correct_odds(game["Odds"])['MoneyLineAway']
   )
 end
+
+ncaab_request = RestClient.get 'https://jsonodds.com/api/odds/ncaab', {'x-api-key': ENV['API_KEY']}
+ncaab_response = JSON.parse(ncaab_request)
+ncaab_response.each do |game|
+  created_game = Game.create(
+    sport: 'NCAAB',
+    date: game['MatchTime'],
+    home_team: game['HomeTeam'],
+    home_logo: "https://s3.us-east-2.amazonaws.com/betski-images/ncaa.png",
+    away_team: game['AwayTeam'],
+    away_logo: "https://s3.us-east-2.amazonaws.com/betski-images/ncaa.png",
+    spread: find_correct_odds(game["Odds"])['PointSpreadHome'],
+    over_under: find_correct_odds(game["Odds"])['TotalNumber'],
+    home_score: 0,
+    away_score: 0
+  )
+  Odd.create(
+    game_id: created_game.id,
+    line: "spread",
+    home_under: find_correct_odds(game["Odds"])['PointSpreadHomeLine'],
+    away_over: find_correct_odds(game["Odds"])['PointSpreadAwayLine']
+  )
+  Odd.create(
+    game_id: created_game.id,
+    line: "over_under",
+    home_under: find_correct_odds(game["Odds"])['UnderLine'],
+    away_over: find_correct_odds(game["Odds"])['OverLine']
+  )
+  Odd.create(
+    game_id: created_game.id,
+    line: "moneyline",
+    home_under: find_correct_odds(game["Odds"])['MoneyLineHome'],
+    away_over: find_correct_odds(game["Odds"])['MoneyLineAway']
+  )
+end
 #
 
 # u1 = User.create(username: "user1", balance: 1000)
