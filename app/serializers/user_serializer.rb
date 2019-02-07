@@ -1,4 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :balance
+  attributes :id, :username, :password_digest :balance
   has_many :tickets
 end
