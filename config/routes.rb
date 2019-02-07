@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
       get "games/:id/odds", to: "games#odds"
       get "games/:id/bets", to: "games#bets"
+
+      post '/login', to: 'auth#create'
     end
   end
 end
