@@ -1,4 +1,5 @@
 class Api::V1::TicketsController < ApplicationController
+  skip_before_action :authorized, only: [:index]
   before_action :find_ticket, only: [:show, :update, :destroy, :bets]
   def index
     @tickets = Ticket.all
