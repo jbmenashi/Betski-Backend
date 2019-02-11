@@ -65,10 +65,8 @@ ActiveRecord::Schema.define(version: 2019_02_11_175750) do
     t.float "points_for"
     t.float "points_against"
     t.string "streak"
-    t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_teams_on_game_id"
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -94,6 +92,5 @@ ActiveRecord::Schema.define(version: 2019_02_11_175750) do
   add_foreign_key "bets", "games"
   add_foreign_key "bets", "tickets"
   add_foreign_key "odds", "games"
-  add_foreign_key "teams", "games"
   add_foreign_key "tickets", "users"
 end

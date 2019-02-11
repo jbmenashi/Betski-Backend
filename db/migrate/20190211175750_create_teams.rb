@@ -9,7 +9,6 @@ class CreateTeams < ActiveRecord::Migration[5.2]
       t.float :points_for
       t.float :points_against
       t.string :streak
-      t.references :game, foreign_key: true
 
       t.timestamps
     end
