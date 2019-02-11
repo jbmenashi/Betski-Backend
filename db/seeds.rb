@@ -121,4 +121,15 @@
 
 teams_request = RestClient.get 'https://api.fantasydata.net/v3/nba/stats/JSON/Standings/2019', {'Ocp-Apim-Subscription-Key': 'dc3f418ce01442d7988f627fa88fba19'}
 teams_response = JSON.parse(teams_request)
-puts teams_response
+teams_response.each do |team|
+  Team.create(
+    city: team['City'],
+    nickname: team['Name'],
+    win_loss: "#{team['Wins']}-#{team['Losses']}",
+    home_win_loss: "#{team['HomeWins']}-#{team['HomeLosses']}",
+    away_win_loss: "#{team['AwayWins']}-#{team['AwayLosses']}",
+    points_for: team['PointsPerGameFor'],
+    points_against: team['PointsPerGameAgainst'],
+    streak: team['StreakDescription']    
+  )
+end
