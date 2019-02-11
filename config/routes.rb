@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :odds, only: [:index, :show, :create]
       resources :tickets, only: [:index, :show, :create, :update, :destroy]
       resources :bets, only: [:index, :show, :create, :update, :destroy]
+      resources :teams, only: [:index, :show]
 
       get "/users/:id/tickets", to: "users#tickets"
       get "/users/:id/tickets/:ticket_id/bets", to: "users#bets"
