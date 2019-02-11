@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_145836) do
+ActiveRecord::Schema.define(version: 2019_02_11_175750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,21 @@ ActiveRecord::Schema.define(version: 2019_02_07_145836) do
     t.index ["game_id"], name: "index_odds_on_game_id"
   end
 
+  create_table "teams", force: :cascade do |t|
+    t.string "city"
+    t.string "nickname"
+    t.string "win_loss"
+    t.string "home_win_loss"
+    t.string "away_win_loss"
+    t.float "points_for"
+    t.float "points_against"
+    t.string "streak"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_teams_on_game_id"
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.integer "wager"
     t.float "payout"
@@ -79,5 +94,6 @@ ActiveRecord::Schema.define(version: 2019_02_07_145836) do
   add_foreign_key "bets", "games"
   add_foreign_key "bets", "tickets"
   add_foreign_key "odds", "games"
+  add_foreign_key "teams", "games"
   add_foreign_key "tickets", "users"
 end

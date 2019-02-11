@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyString
+  name: MyString
+  win_loss: MyString
+  home_win_loss: MyString
+  away_win_loss: MyString
+  points_for: MyString
+  : 1.5
+  points_against: MyString
+  : 1.5
+  streak: MyString
+
+two:
+  city: MyString
+  name: MyString
+  win_loss: MyString
+  home_win_loss: MyString
+  away_win_loss: MyString
+  points_for: MyString
+  : 1.5
+  points_against: MyString
+  : 1.5
+  streak: MyString

@@ -1,5 +1,5 @@
 class Api::V1::GamesController < ApplicationController
-  before_action :find_game, only: [:show, :odds, :bets]
+  before_action :find_game, only: [:show, :odds, :bets, :teams]
 
   def index
     @games = Game.all
@@ -25,6 +25,10 @@ class Api::V1::GamesController < ApplicationController
 
   def bets
     render json: @game.bets
+  end
+
+  def teams
+    render json: @game.teams
   end
 
 
