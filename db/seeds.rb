@@ -131,6 +131,7 @@ teams_response.each do |team|
     away_win_loss: "#{team['AwayWins']}-#{team['AwayLosses']}",
     points_for: team['PointsPerGameFor'],
     points_against: team['PointsPerGameAgainst'],
+    last_ten: "#{team['LastTenWins']}-#{team['LastTenLosses']}",
     streak: team['StreakDescription']
   )
 end
