@@ -1,4 +1,5 @@
 class Api::V1::BetsController < ApplicationController
+  skip_before_action :authorized, only: [:index, :show]
   before_action :find_bet, only: [:show, :update, :destroy]
   def index
     @bets = Bet.all
