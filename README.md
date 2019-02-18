@@ -1,24 +1,3 @@
-# README
+# Betski Backend README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Betski is a sports betting tracker web application designed for either experienced users or for users who haven't gambled on sports before. The front-end repo and video demo can be found here: https://github.com/jbmenashi/Betski-Frontend
